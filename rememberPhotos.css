@@ -7,7 +7,7 @@ body, html {
 .static-div {
     height: 100vh; /* Altura del 100% del viewport */
     background-color: #000000;
-    background-image: url('/home/gerard/Downloads/marcos/ready_Horizon.png');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FMarcos%2Fready_Horizon.png?alt=media&token=ee531680-de5a-4a86-8b4d-88f16d6f7a87');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
