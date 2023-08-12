@@ -29,7 +29,6 @@ pictures = [
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190820_132710.jpg?alt=media&token=2e50beb8-7518-4b58-b49e-56b58d10a8c4',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190820_132818.jpg?alt=media&token=06ef3eca-c447-48ae-bff3-8b197ee9eb7a',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190820_205555.jpg?alt=media&token=7ab0d910-28a8-429c-af03-70e75ce638f6',
-    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190821_195556.jpg?alt=media&token=efdcfeea-9aa6-411d-9e49-b5c5f1ae3e91',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20221210_183949.jpg?alt=media&token=61d7792d-f6bd-43d6-aa99-cfe04995de4c',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20221212_211810.jpg?alt=media&token=f239eb50-43f4-4fdc-8183-c8d9ea8bd763',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20221212_211951_001_saved.jpg?alt=media&token=0b706fa7-b133-4f57-ac55-e74a6783c249',
