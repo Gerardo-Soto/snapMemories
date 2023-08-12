@@ -55,7 +55,7 @@ let currentPictureIndex = 0;
 var interval;
 
 // timer
-let intervalSeconds = 10 * 1000;
+let intervalSeconds = 60 * 1000;
 changeImage();
 
 function changeInterval(seconds) {
