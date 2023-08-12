@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./rememberPhotos.css">
+    <link rel="stylesheet" href="./scrollStyle.css">
+    <title>SnapMemories</title>
+</head>
+<body>
+    <div class="static-div" id="static-div">
+        <!-- Contenido del div estático -->
+
+        <div class="inner-div-blur" id="inner-div-blur"></div>
+        
+        <div class="inner-div" id="inner-div"></div>
+
+    </div>
+    <div class="dynamic-div">
+        <!-- Contenido del div dinámico -->
+        <div class="minutes">
+            <button onclick="changeInterval(0.166)">10 seg</button>
+            <button onclick="changeInterval(1)">1 min</button>
+            <button onclick="changeInterval(5)">5 min</button>
+            <button onclick="changeInterval(10)">10 min</button>
+            <button onclick="changeInterval(30)">30 min</button>
+            <input type="number" placeholder="minutes">
+        </div>
+        <div class="frames">
+            <button onclick="changeFrame(0)">Frame 1</button>
+            <button onclick="changeFrame(1)">Frame 2</button>
+            <button onclick="changeFrame(2)">Frame 3</button>
+            <button onclick="changeFrame(3)">Frame 4</button>
+            <button onclick="changeFrame(4)">Frame 5</button>
+        </div>
+    </div>
+
+    <script src="./scrollHidden.js"></script>
+    <script src="./changePhoto.js"></script>
+    <script src="./changeFrame.js"></script>
+</body>
+</html>
