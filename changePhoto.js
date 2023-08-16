@@ -47,6 +47,24 @@ pictures = [
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20230106_162732.jpg?alt=media&token=bada7da7-2aff-45a0-8b0f-e036679857ac',
 ];
 
+pokemon = [
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2F150_pokemons.png?alt=media&token=f1d08bde-9308-40cf-8ac6-17837f61eee1',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FAlola_1.png?alt=media&token=d6ec89da-fce3-48ee-987a-bcf934abd3c0',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FAlola_2.png?alt=media&token=498c8a65-5394-4db0-bf6d-b212b1a91831',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FAlola_start.png?alt=media&token=5642926e-36d8-41ea-929c-4731f3bae2c9',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FHoenn.jpg?alt=media&token=4f76dd1f-0fe2-486a-a031-1e800b4173aa',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FHoenn_kvg.png?alt=media&token=7a7e4b35-22e1-4903-ab31-7ce3c0f3e731',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FP9223_710-97605_01.jpg?alt=media&token=b1ecc4b5-cee4-4930-82b7-5e75b1363c3e',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FPokemonLetsGo_Cover.jpg?alt=media&token=47104ee0-e1a9-4615-8447-e266a7e89953',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FPokemon_Master_Trainer.png?alt=media&token=a0622d9c-5659-4330-88c0-a71bd6ea58ef',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fdesktop-wallpaper-pokemon-sun-moon.jpg?alt=media&token=d28eed72-c0de-4db7-b8b0-0182038ba00e',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fgalar_posters.png?alt=media&token=2e2ddc60-4832-4264-b4d0-43516dfba8e8',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fkanto.jpg?alt=media&token=04ea8f6f-e28f-4a05-a5f5-f7b1084267a0',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fletsgo.png?alt=media&token=39c4331f-fcd0-4270-984f-adcd16978cec',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon-lets-go-pikachu-lets-go-eevee-2018712161234_5.jpg?alt=media&token=709b1123-688b-495b-a6cb-626a4aa5e290',
+    'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon_lets_go_47.png?alt=media&token=ff35663d-c4ed-467c-bcfc-008e478cb8dd',
+];
+
 let currentPictureIndex = 0;
 
 // Stores the setInterval ID used by
@@ -71,10 +89,10 @@ function changeImage() {
     const innerDiv = document.getElementById('inner-div');
     const innerDivBlur = document.getElementById('inner-div-blur');
 
-    innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-    innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+    innerDiv.style.backgroundImage = `url(${pokemon[currentPictureIndex]})`;
+    innerDivBlur.style.backgroundImage = `url(${pokemon[currentPictureIndex]})`;
 
-    currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
+    currentPictureIndex = (currentPictureIndex + 1) % pokemon.length;
 
     interval = setInterval(changeImage, intervalSeconds);
 }
