@@ -89,10 +89,10 @@ function changeImage() {
     const innerDiv = document.getElementById('inner-div');
     const innerDivBlur = document.getElementById('inner-div-blur');
 
-    innerDiv.style.backgroundImage = `url(${pokemon[currentPictureIndex]})`;
-    innerDivBlur.style.backgroundImage = `url(${pokemon[currentPictureIndex]})`;
+    innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+    innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
 
-    currentPictureIndex = (currentPictureIndex + 1) % pokemon.length;
+    currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
 
     interval = setInterval(changeImage, intervalSeconds);
 }
