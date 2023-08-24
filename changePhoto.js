@@ -1,4 +1,4 @@
-pictures = [
+cloudPictures = [
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190814_071049.jpg?alt=media&token=0eb33d92-a04c-4dae-8675-a349f833dbb8',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190815_122846.jpg?alt=media&token=8bb5e0e4-4dab-47cf-8874-c6a40f9a5c32',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190815_184353.jpg?alt=media&token=d188cf31-ebe1-4b40-909a-361f5c23d491',
@@ -63,6 +63,9 @@ pokemon = [
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fletsgo.png?alt=media&token=39c4331f-fcd0-4270-984f-adcd16978cec',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon-lets-go-pikachu-lets-go-eevee-2018712161234_5.jpg?alt=media&token=709b1123-688b-495b-a6cb-626a4aa5e290',
     'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon_lets_go_47.png?alt=media&token=ff35663d-c4ed-467c-bcfc-008e478cb8dd',
+];
+
+pictures = [
 ];
 
 let currentPictureIndex = 0;
