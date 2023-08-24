@@ -72,15 +72,29 @@ let currentPictureIndex = 0;
 var interval;
 
 // timer
-let intervalSeconds = 60 * 1000;
+// let intervalSeconds = 10 * 1000;// test
+let intervalSeconds = 60 * 1000;// prod
 changeImage();
+
 
 function changeInterval(seconds) {
     intervalSeconds = seconds * 1000 * 60;
     console.log(`new interval: ${intervalSeconds}`);
 
     changeImage();
-}
+};
+
+function changeMinutesInterval() {
+    const changeMinutes = Number.parseInt(document.getElementById('placeholder-minutes').value);
+
+    console.log(changeMinutes);
+    if (Number.isInteger(changeMinutes)) {
+        console.log('is a number');
+        changeInterval(changeMinutes);
+    } else {
+        alert('set a number');
+    }
+};
 
 function changeImage() {
     // Clears the previous setInterval timer
@@ -89,12 +103,83 @@ function changeImage() {
     const innerDiv = document.getElementById('inner-div');
     const innerDivBlur = document.getElementById('inner-div-blur');
 
-    innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-    innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+    const cloudSource = document.getElementById('optionCloudSource');
+    if (cloudSource.checked) {
+        innerDiv.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
 
-    currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
+        currentPictureIndex = (currentPictureIndex + 1) % cloudPictures.length;
+        console.log('cloud');
+    } else {
+        innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+
+        currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
+        console.log('local');
+    };
 
     interval = setInterval(changeImage, intervalSeconds);
-}
+};
 
 //setInterval(changeImage, intervalSeconds );
+
+
+function prevPicture() {
+    const cloudSource = document.getElementById('optionCloudSource');
+    if (cloudSource.checked) {
+    
+        currentPictureIndex = (currentPictureIndex - 1) % cloudPictures.length;
+        console.log(currentPictureIndex);
+        if (currentPictureIndex < 0) {
+            currentPictureIndex = cloudPictures.length - 1;
+        };
+
+        const innerDiv = document.getElementById('inner-div');
+        const innerDivBlur = document.getElementById('inner-div-blur');
+
+        innerDiv.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
+    
+    } else {
+    
+        currentPictureIndex = (currentPictureIndex - 1) % pictures.length;
+        console.log(currentPictureIndex);
+        if (currentPictureIndex < 0) {
+            currentPictureIndex = pictures.length - 1;
+        };
+
+        const innerDiv = document.getElementById('inner-div');
+        const innerDivBlur = document.getElementById('inner-div-blur');
+
+        innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+    
+    };
+
+};
+
+function nextPicture() {
+    const cloudSource = document.getElementById('optionCloudSource');
+    if (cloudSource.checked) {
+    
+        currentPictureIndex = (currentPictureIndex + 1) % cloudPictures.length;
+        console.log(currentPictureIndex);
+        const innerDiv = document.getElementById('inner-div');
+        const innerDivBlur = document.getElementById('inner-div-blur');
+
+        innerDiv.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
+    
+    } else {
+
+        currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
+        console.log(currentPictureIndex);
+        const innerDiv = document.getElementById('inner-div');
+        const innerDivBlur = document.getElementById('inner-div-blur');
+
+        innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
+    
+    };
+};
+
