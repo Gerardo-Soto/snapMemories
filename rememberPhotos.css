@@ -9,6 +9,10 @@ button:active {
     border-color: rgb(0, 255, 255, 0.0);
 }
 
+.img-tutorial {
+    width: 100%;
+}
+
 .static-div {
     height: 100vh; /* Altura del 100% del viewport */
     background-color: #000000;
