@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./rememberPhotos.css">
     <link rel="stylesheet" href="./scrollStyle.css">
+    <link rel="stylesheet" href="./toggleFullScreen.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FsnaMemories_icon_html.png?alt=media&token=386f6845-8d95-472a-95d5-aa6b326e273a" type="image/x-icon">
     <title>SnapMemories</title>
@@ -12,16 +13,17 @@
 <body>
     <div class="static-div" id="static-div">
         <!-- Contenido del div estático -->
-
+        <button class="top-button" onclick="toggleFullScreen(document.body)"></button>
+        
         <div class="inner-div-blur" id="inner-div-blur"></div>
         
         <div class="inner-div" id="inner-div"></div>
-
+        
         <!-- BUTTONS-->
         <div class="center-container">
-            <button class="prev-button" onclick="prevPicture()"></button>
-            <button type="button" class="center-button" id="exampleModal" data-toggle="modal" data-target="#exampleModalCenter"></button>
-            <button class="next-button" onclick="nextPicture()"></button>
+          <button class="prev-button" onclick="changePicture('back')"></button>
+          <button type="button" class="center-button" id="exampleModal" data-toggle="modal" data-target="#exampleModalCenter"></button>
+          <button class="next-button" onclick="changePicture('next')"></button>
         </div>
     </div>
     
@@ -89,16 +91,32 @@
                 <hr>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <p class="test-source">Source:</p>
-                    <label class="btn btn-secondary active click">
-                      <input type="radio" name="options" id="optionCloudSource" checked> Cloud
+                    <label class="btn btn-secondary click">
+                      <input type="radio" name="options" id="optionCloudSource" > Cloud
+                    </label>
+                    <label class="btn btn-secondary click active">
+                      <input type="radio" name="options" id="optionLocalSource"> Local +
                     </label>
                     <label class="btn btn-secondary click">
-                      <input type="radio" name="options" id="optionLocalSource" > Local
+                      <input type="radio" name="options" id="optionCloudPokemonSource" > Pokemon
+                    </label>
+                    <label class="btn btn-secondary click">
+                      <input type="radio" name="options" id="optionCloudMetroidSource" > Metroid
                     </label>
                     <p class="test-source" id="number-of-photos">Photos: </p>
                     <button class="custom-btn btn-11" onclick="jumpTo()">Jump to: </button>
                     <input type="number" min="0"  class="placeholder-minutes" id="jump-to" />
                 </div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active click">
+                    <input type="radio" name="options" id="optionOrderSource" > Order
+                  </label>
+                  <label class="btn btn-secondary click">
+                    <input type="radio" name="options" id="optionRandomSource" > Random
+                  </label>
+                  
+                </div>
+                
                 <!--<p>Audio to avoid savescreen</p>-->
                 <audio class="audio-track" controls autoplay loop muted>
                     <source src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FPok%C3%A9mon%20-%20The%20Matter's%20Settled.mp3?alt=media&token=5a518d7d-988b-438b-ad49-ff6b28374288" />
@@ -107,23 +125,25 @@
         
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#tutorialModal">Help</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button class="custom-btn-large btn-11-large" onclick="toggleFullScreen(document.body)">Full Screen</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#tutorialModal">Help</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 
 
-    <script src="./startDemoModal.js"></script>
-    <script src="./scrollHidden.js"></script>
-    <script src="./changePhoto.js"></script>
-    <script src="./changeFrame.js"></script>
+  <script src="./startDemoModal.js"></script>
+  <script src="./scrollHidden.js"></script>
+  <script src="./changePhoto.js"></script>
+  <script src="./changeFrame.js"></script>
+  <script src="./toggleFullScreen.js"></script>
 
 
-    <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
 </body>
 </html>

@@ -188,6 +188,43 @@ localPictures = [
     '/home/gerard/Pictures/save/sony_photos/IMG-20221229-WA0009.jpg',
 ];
 
+const album = {
+    local: [
+        '/home/gerard/Pictures/save/sony_photos/20190815_184353.jpg',
+        '/home/gerard/Pictures/save/sony_photos/20190815_201328.jpg',
+        '/home/gerard/Pictures/save/sony_photos/IMG-20220510-WA0071.jpg',
+        '/home/gerard/Pictures/save/sony_photos/IMG-20221229-WA0009.jpg',
+    ],
+    texas: [
+        /** Navidad 2022 */
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0010.jpg?alt=media&token=d4ad445b-a4e2-4278-98f9-027dae48ba3c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0011.jpg?alt=media&token=d37df69a-5cc0-4b22-84d4-ff0f9a9f3d90',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0014.jpg?alt=media&token=308b4d80-64a2-4ebd-bb28-7fb73db13464',
+        
+    ],
+    pokemon: [
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2F150_pokemons.png?alt=media&token=f1d08bde-9308-40cf-8ac6-17837f61eee1',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FAlola_1.png?alt=media&token=d6ec89da-fce3-48ee-987a-bcf934abd3c0',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FAlola_2.png?alt=media&token=498c8a65-5394-4db0-bf6d-b212b1a91831',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FAlola_start.png?alt=media&token=5642926e-36d8-41ea-929c-4731f3bae2c9',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FHoenn.jpg?alt=media&token=4f76dd1f-0fe2-486a-a031-1e800b4173aa',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FHoenn_kvg.png?alt=media&token=7a7e4b35-22e1-4903-ab31-7ce3c0f3e731',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FP9223_710-97605_01.jpg?alt=media&token=b1ecc4b5-cee4-4930-82b7-5e75b1363c3e',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FPokemonLetsGo_Cover.jpg?alt=media&token=47104ee0-e1a9-4615-8447-e266a7e89953',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2FPokemon_Master_Trainer.png?alt=media&token=a0622d9c-5659-4330-88c0-a71bd6ea58ef',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fdesktop-wallpaper-pokemon-sun-moon.jpg?alt=media&token=d28eed72-c0de-4db7-b8b0-0182038ba00e',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fgalar_posters.png?alt=media&token=2e2ddc60-4832-4264-b4d0-43516dfba8e8',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fkanto.jpg?alt=media&token=04ea8f6f-e28f-4a05-a5f5-f7b1084267a0',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fletsgo.png?alt=media&token=39c4331f-fcd0-4270-984f-adcd16978cec',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon-lets-go-pikachu-lets-go-eevee-2018712161234_5.jpg?alt=media&token=709b1123-688b-495b-a6cb-626a4aa5e290',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon_lets_go_47.png?alt=media&token=ff35663d-c4ed-467c-bcfc-008e478cb8dd',
+    ],
+    metroid: [
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroidZeroMission_image1600w.jpg?alt=media&token=b9effef1-0344-43c0-bd62-f0a89285ad85',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_Samus_Returns.jpg?alt=media&token=faa8ddc7-ee15-4678-8b20-338dc6894bb8',
+    ],
+};
+
 let currentPictureIndex = 0;
 
 // Stores the setInterval ID used by
@@ -221,9 +258,29 @@ function changeMinutesInterval() {
 };
 
 function changeImage() {
+    const cloudSource = document.getElementById('optionCloudSource');
+    const localSource = document.getElementById('optionLocalSource');
+    const cloudPokemonSource = document.getElementById('optionCloudPokemonSource');
+    const CloudMetroidSource = document.getElementById('optionCloudMetroidSource');
 
+    /** Check the album selected */
+    let indexAlbum = '';
+    if (cloudSource.checked) {
+        indexAlbum = 'texas';
+    } else if (CloudMetroidSource.checked) {
+        indexAlbum = 'metroid';
+    } else if (cloudPokemonSource.checked) {
+        indexAlbum = 'pokemon';
+    } else {
+        indexAlbum = 'local';
+    };
+
+    /** Random option */
+    const optionRandomSource = document.getElementById('optionRandomSource');
+
+    /** show the number of photos */
     const numberOfPhotos = document.getElementById('number-of-photos');
-    numberOfPhotos.textContent = `Photos: ${cloudPictures.length}`;
+    numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
 
 
     // Clears the previous setInterval timer
@@ -232,20 +289,11 @@ function changeImage() {
     const innerDiv = document.getElementById('inner-div');
     const innerDivBlur = document.getElementById('inner-div-blur');
 
-    const cloudSource = document.getElementById('optionCloudSource');
-    if (cloudSource.checked) {
-        innerDiv.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
-        innerDivBlur.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
+    innerDiv.style.backgroundImage = `url(${album[indexAlbum][currentPictureIndex]})`;
+    innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][currentPictureIndex]})`;
 
-        currentPictureIndex = (currentPictureIndex + 1) % cloudPictures.length;
-        console.log('cloud');
-    } else {
-        innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-        innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-
-        currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
-        console.log('local');
-    };
+    currentPictureIndex = (currentPictureIndex + 1) % album[indexAlbum].length;
+    console.log(`Album: ${indexAlbum}`);
 
     interval = setInterval(changeImage, intervalSeconds);
 };
@@ -253,63 +301,73 @@ function changeImage() {
 //setInterval(changeImage, intervalSeconds );
 
 
-function prevPicture() {
+let shuffleIndex = 0;
+/**
+ * 
+ * @param {string} side 
+ */
+function changePicture(side) {
+    // change image
+    const innerDiv = document.getElementById('inner-div');
+    const innerDivBlur = document.getElementById('inner-div-blur');
+
+    // get album selected
     const cloudSource = document.getElementById('optionCloudSource');
+    const localSource = document.getElementById('optionLocalSource');
+    const cloudPokemonSource = document.getElementById('optionCloudPokemonSource');
+    const CloudMetroidSource = document.getElementById('optionCloudMetroidSource');
+
+    /** Check the album selected */
+    // save album selected
+    let indexAlbum = '';
     if (cloudSource.checked) {
-    
-        currentPictureIndex = (currentPictureIndex - 1) % cloudPictures.length;
-        console.log(currentPictureIndex);
-        if (currentPictureIndex < 0) {
-            currentPictureIndex = cloudPictures.length - 1;
-        };
-
-        const innerDiv = document.getElementById('inner-div');
-        const innerDivBlur = document.getElementById('inner-div-blur');
-
-        innerDiv.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
-        innerDivBlur.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
-    
+        indexAlbum = 'texas';
+    } else if (CloudMetroidSource.checked) {
+        indexAlbum = 'metroid';
+    } else if (cloudPokemonSource.checked) {
+        indexAlbum = 'pokemon';
     } else {
-    
-        currentPictureIndex = (currentPictureIndex - 1) % pictures.length;
-        console.log(currentPictureIndex);
-        if (currentPictureIndex < 0) {
-            currentPictureIndex = pictures.length - 1;
-        };
-
-        const innerDiv = document.getElementById('inner-div');
-        const innerDivBlur = document.getElementById('inner-div-blur');
-
-        innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-        innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-    
+        indexAlbum = 'local';
     };
 
-};
+    /** check random */
+    //const optionOrderSource = document.getElementById('optionOrderSource');// start with false :(
+    const optionRandomSource = document.getElementById('optionRandomSource');
+    console.log(optionRandomSource.checked);// false, click: true
 
-function nextPicture() {
-    const cloudSource = document.getElementById('optionCloudSource');
-    if (cloudSource.checked) {
-    
-        currentPictureIndex = (currentPictureIndex + 1) % cloudPictures.length;
+    // check limit index
+    if (side == "back") {
+        console.log('back');
+        currentPictureIndex = (
+            optionRandomSource ? 
+            myShuffleArray[shuffleIndex--] % album[indexAlbum].length:
+            currentPictureIndex - 1) % album[indexAlbum].length;
         console.log(currentPictureIndex);
-        const innerDiv = document.getElementById('inner-div');
-        const innerDivBlur = document.getElementById('inner-div-blur');
-
-        innerDiv.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
-        innerDivBlur.style.backgroundImage = `url(${cloudPictures[currentPictureIndex]})`;
-    
+        if (currentPictureIndex < 0) {
+            currentPictureIndex = album[indexAlbum].length - 1;
+        };
+        
     } else {
+        console.log('next');
+        
+        if (optionRandomSource) {
+            console.log('random');
+            let indexShuffle = myShuffleArray[shuffleIndex++] % album[indexAlbum].length;
 
-        currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
-        console.log(currentPictureIndex);
-        const innerDiv = document.getElementById('inner-div');
-        const innerDivBlur = document.getElementById('inner-div-blur');
-
-        innerDiv.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-        innerDivBlur.style.backgroundImage = `url(${pictures[currentPictureIndex]})`;
-    
+            innerDiv.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
+            innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
+        } else {
+            console.log('orden');
+            innerDiv.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex + 1) % album[indexAlbum].length]})`;
+            innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex + 1) % album[indexAlbum].length]})`;        
+            
+        }
+        //console.log(currentPictureIndex);            
     };
+
+
+    
+
 };
 
 
@@ -318,4 +376,25 @@ function jumpTo() {
     console.log(jumpPictureTo);
 
     currentPictureIndex = jumpPictureTo;
-}
+};
+
+
+/** random generator */
+// declare the function 
+const shuffle = (array) => { 
+    for (let i = array.length - 1; i > 0; i--) { 
+        const j = Math.floor(Math.random() * (i + 1)); 
+        [array[i], array[j]] = [array[j], array[i]]; 
+    } 
+    return array; 
+}; 
+    
+let numbers = [];
+for (let index = 1; index < 100; index++) {
+    numbers.push(index);
+};
+
+const myShuffleArray = shuffle(numbers);
+console.log(myShuffleArray);
+
+
