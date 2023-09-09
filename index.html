@@ -64,6 +64,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalCenterTitle">SnapMemories / Options</h5>
+          <button class="custom-btn btn-11" onclick="showTimer()">Timer</button>
+          <button class="custom-btn btn-11" onclick="showFrames()">Frames</button>
+          <button class="custom-btn btn-11" onclick="showAlbum()">Album</button>
+          <button class="custom-btn btn-11" onclick="showOrder()">Order</button>
+          <button class="custom-btn btn-11" onclick="showMusic()">Music</button>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -71,7 +76,7 @@
         <div class="modal-body">
             <div >
                 <!-- Contenido del div dinámico -->
-                <div class="minutes">
+                <div class="minutes" id="minutes-options">
                     <!--<button class="custom-btn btn-11" onclick="changeInterval(0.166)">10 seg</button>-->
                     <button class="custom-btn btn-11" onclick="changeInterval(0.5)">30 seg</button>
                     <button class="custom-btn btn-11" onclick="changeInterval(1)">1 min</button>
@@ -81,16 +86,14 @@
                     <input type="number" min="1" class="placeholder-minutes" id="placeholder-minutes" placeholder="minutes" >
                     <button class="custom-btn btn-11" onclick="changeMinutesInterval()">Set</button>
                 </div>
-                <hr>
-                <div class="frames">
+                <div class="frames hidden" id="frames-options">
                     <button class="custom-btn btn-11" onclick="changeFrame(0)">Frame 1</button>
                     <button class="custom-btn btn-11" onclick="changeFrame(1)">Frame 2</button>
                     <button class="custom-btn btn-11" onclick="changeFrame(2)">Frame 3</button>
                     <button class="custom-btn btn-11" onclick="changeFrame(3)">Frame 4</button>
                     <button class="custom-btn btn-11" onclick="changeFrame(4)">Frame 5</button>
                 </div>
-                <hr>
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div class="hidden" id="album-options" data-toggle="buttons">
                     <p class="test-source">Source:</p>
                     <label class="btn btn-secondary click">
                       <input type="radio" name="options" id="optionCloudSource" > Cloud
@@ -104,22 +107,22 @@
                     <label class="btn btn-secondary click">
                       <input type="radio" name="options" id="optionCloudMetroidSource" > Metroid
                     </label>
-                    <p class="test-source" id="number-of-photos">Photos: </p>
-                    <button class="custom-btn btn-11" onclick="jumpTo()">Jump to: </button>
-                    <input type="number" min="0"  class="placeholder-minutes" id="jump-to" />
+                    
                 </div>
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div class="hidden" id="order-options" data-toggle="buttons">
                   <label class="btn btn-secondary active click">
                     <input type="radio" name="options" id="optionOrderSource" > Order
                   </label>
                   <label class="btn btn-secondary click">
                     <input type="radio" name="options" id="optionRandomSource" > Random
                   </label>
-                  
+                  <p class="test-source" id="number-of-photos">Photos: </p>
+                  <button class="custom-btn-large btn-11-large" onclick="jumpTo()">Jump to: </button>
+                  <input type="number" min="0"  class="placeholder-minutes" id="jump-to" />
                 </div>
                 
                 <!--<p>Audio to avoid savescreen</p>-->
-                <audio class="audio-track" controls autoplay loop muted>
+                <audio class="audio-track hidden" id="music-options" controls autoplay loop muted>
                     <source src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FPok%C3%A9mon%20-%20The%20Matter's%20Settled.mp3?alt=media&token=5a518d7d-988b-438b-ad49-ff6b28374288" />
                 </audio> 
             </div>
@@ -139,6 +142,7 @@
   <script src="./scrollHidden.js"></script>
   <script src="./changePhoto.js"></script>
   <script src="./changeFrame.js"></script>
+  <script src="./showOptions.js"></script>
   <script src="./toggleFullScreen.js"></script>
 
 
