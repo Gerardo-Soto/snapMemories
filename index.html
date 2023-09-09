@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./scrollStyle.css">
     <link rel="stylesheet" href="./buttonsOptions.css">
     <link rel="stylesheet" href="./toggleFullScreen.css">
+    <link rel="stylesheet" href="./navigationBarMenu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FsnaMemories_icon_html.png?alt=media&token=386f6845-8d95-472a-95d5-aa6b326e273a" type="image/x-icon">
     <title>SnapMemories</title>
@@ -64,11 +65,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalCenterTitle">SnapMemories / Options</h5>
-          <button class="custom-btn btn-11" onclick="showTimer()">Timer</button>
-          <button class="custom-btn btn-11" onclick="showFrames()">Frames</button>
-          <button class="custom-btn btn-11" onclick="showAlbum()">Album</button>
-          <button class="custom-btn btn-11" onclick="showOrder()">Order</button>
-          <button class="custom-btn btn-11" onclick="showMusic()">Music</button>
+          
+
+          <div class="container">
+            <nav>
+              <ul>
+                <li class="" onclick="showTimer()">Timer</li>
+                <li class="" onclick="showFrames()">Frames</li>
+                <li class="" onclick="showAlbum()">Album</li>
+                <li class="" onclick="showOrder()">Order</li>
+                <li class="" onclick="showMusic()">Music</li>
+              </ul>
+            </nav>
+          </div>
+
+
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
