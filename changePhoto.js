@@ -188,8 +188,53 @@ const album = {
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F_Pokemon%2Fpokemon_lets_go_47.png?alt=media&token=ff35663d-c4ed-467c-bcfc-008e478cb8dd',
     ],
     metroid: [
-        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroidZeroMission_image1600w.jpg?alt=media&token=b9effef1-0344-43c0-bd62-f0a89285ad85',
-        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_Samus_Returns.jpg?alt=media&token=faa8ddc7-ee15-4678-8b20-338dc6894bb8',
+        // Metroid 1
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_blacknyellowmetroid.jpg?alt=media&token=620ed546-81e8-416b-9706-6fc4a6e2ccea',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_box_art.png?alt=media&token=d603f8ab-7302-4562-92c1-4bfcb212c67d',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_Startoff.jpg?alt=media&token=794284c1-9de0-445e-bef3-f08de0ad7058',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_Metroid_Zero_Mission_box_art.jpg?alt=media&token=ed2ebb31-81a3-4ba2-af0a-ad3d8e89679d',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_ZeroMission_image1600w.jpg?alt=media&token=87b7f931-e1f3-47b3-98f4-1bee6f4758cc',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_AmiiboSamus_006.jpeg?alt=media&token=216c96c5-66a6-4cde-be4d-9f5573691b5c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_metroid_vs_samus.png?alt=media&token=5648ae92-d5b3-417e-9d5f-c75914dfd114',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_samus_vs_ridley.png?alt=media&token=0f2b17a2-d03f-4d00-b149-73baeedfa427',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_1_custom_samus_aran_amiibo_figure.jpg?alt=media&token=d4cebd5c-548f-43e1-a04b-59e915842f06',
+        
+        // Metroid 2
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_GB_amiibos.jpg?alt=media&token=06c83db9-42f4-42cb-993e-d1aaef521471',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_boxart.png?alt=media&token=df175a15-475a-4689-81a2-2e3eb956c5ea',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_GB_and_3ds.jpg?alt=media&token=b1b50814-c252-4d33-a2bf-59565cd8cc2e',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_3DS_MetroidSamusReturns_illustration_01.0.jpg?alt=media&token=9ab46f54-41d7-406a-8e1d-369b873d8edd',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_Samus_Returns_3ds.jpg?alt=media&token=343c728b-3798-4967-944e-96c97f5ef66f',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_StaffThoughtsSamusReturns.jpg?alt=media&token=fad1ab49-1b66-454b-a8a2-4f495841ab1b',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_sr.png?alt=media&token=8780abd9-25fb-4669-8822-c067707c7424',
+        // amiibos
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_collector_edition.png?alt=media&token=680fabb3-4f06-4c30-bcc1-bb3319285915',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_metroid_amiibo.png?alt=media&token=d143dded-6d38-498d-9cbc-bf2c07519226',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_metroid_amiibo_ridley-nintendo_3ds.jpg?alt=media&token=bdeca366-4fba-4768-9ddf-3dee2787da3a',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_samus-collection.png?alt=media&token=f466ac63-e448-4126-be5d-2e32f57044cc',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_tank.jpg?alt=media&token=d6a90052-9e19-47ad-b918-78910d3a1ef1',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_2_with_amiibos.jpg?alt=media&token=b6ec1c99-0e70-45a5-857e-d00e184ba392',
+        
+        // Metroid 3
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_3_Super_Metroid_Portada.jpg?alt=media&token=43eaab3f-3877-4f4f-a19d-f23f8225ddb0',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_3_all_enemies_poster.jpg?alt=media&token=d4d42808-9259-4b78-bdcd-ffb22823bd08',
+        
+        // Metroid 4
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_4_Metroid_Fusion_boxart.jpg?alt=media&token=cf118699-73c1-494f-beb1-e428bcac862c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_4_all_characters.png?alt=media&token=3a95f153-66b4-407d-ac56-5374d2e2cce1',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_4_metroid-fusion.jpg?alt=media&token=4c4a8cc1-1cc2-4791-bbac-928603c6325c',
+        
+        // Metroid 5
+        '',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_Metroid_Dread.jpg?alt=media&token=cf968a8b-e416-4774-8442-eb93b1e21c94',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_special_edition.jpg?alt=media&token=34219ca9-2ae5-40d0-b216-bb695a2d96f4',
+
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_samus_vs_emmi.png?alt=media&token=1846691d-f64b-44ab-96a4-082474317681',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_metroid-dread.jpg?alt=media&token=bdb2bc92-1dc5-4410-8774-1f10fa07ad2b',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_samus_vs_emmi_2.png?alt=media&token=5a7f5591-22ac-4dda-88bc-8081be234a83',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_timeline-660x400.jpg?alt=media&token=c85f5bd4-eab0-4c14-924e-19f7c46e4af6',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_metroid_collection.jpg?alt=media&token=1a3c4c3f-5a9c-4edc-b062-e08849d74eae',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_metroid_cards.png?alt=media&token=d0f1ec62-c698-433c-abeb-f059a7b00fa1',
     ],
 };
 
