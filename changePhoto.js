@@ -225,7 +225,6 @@ const album = {
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_4_metroid-fusion.jpg?alt=media&token=4c4a8cc1-1cc2-4791-bbac-928603c6325c',
         
         // Metroid 5
-        '',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_Metroid_Dread.jpg?alt=media&token=cf968a8b-e416-4774-8442-eb93b1e21c94',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_special_edition.jpg?alt=media&token=34219ca9-2ae5-40d0-b216-bb695a2d96f4',
 
@@ -395,17 +394,13 @@ function changePicture(side) {
             innerDiv.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;
             innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;        
             
-        }
+        };
         //console.log(currentPictureIndex);
 
         if (currentPictureIndex > album[indexAlbum].length - 1) {
             currentPictureIndex = 0;
-        }
+        };
     };
-
-
-    
-
 };
 
 
@@ -419,6 +414,17 @@ function jumpTo() {
 
 /** random generator */
 // declare the function 
+let articles = [];
+fillArticles(articles, 100);
+
+function fillArticles(articles, amount) {
+    for (let index = 0; index < amount; index++) {
+        articles.push(index);
+    }
+}
+
+//console.log(articles);
+
 const shuffle = (array) => { 
     for (let i = array.length - 1; i > 0; i--) { 
         const j = Math.floor(Math.random() * (i + 1)); 
@@ -426,13 +432,8 @@ const shuffle = (array) => {
     } 
     return array; 
 }; 
-    
-let numbers = [];
-for (let index = 1; index < 100; index++) {
-    numbers.push(index);
-};
 
-const myShuffleArray = shuffle(numbers);
+
+const myShuffleArray = shuffle(numbersShuffle);
 console.log(myShuffleArray);
-
 
