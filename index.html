@@ -106,30 +106,30 @@
                 </div>
                 <div class="hidden" id="album-options" data-toggle="buttons">
                     <p class="test-source">Source:</p>
-                    <label class="btn btn-secondary click">
-                      <input type="radio" name="options" id="optionCloudSource" > Cloud
+                    <label class="btn btn-secondary click" onclick="changeSource('cloud')">
+                      <input type="radio" name="options" id="optionCloudSource" value=""> Cloud
                     </label>
-                    <label class="btn btn-secondary click active">
-                      <input type="radio" name="options" id="optionLocalSource"> Local +
+                    <label class="btn btn-secondary click active" onclick="changeSource('local')">
+                      <input type="radio" name="options" id="optionLocalSource" value=""> Local +
                     </label>
-                    <label class="btn btn-secondary click">
-                      <input type="radio" name="options" id="optionCloudPokemonSource" > Pokemon
+                    <label class="btn btn-secondary click" onclick="changeSource('pokemon')">
+                      <input type="radio" name="options" id="optionCloudPokemonSource" value="" > Pokemon
                     </label>
-                    <label class="btn btn-secondary click">
-                      <input type="radio" name="options" id="optionCloudMetroidSource" > Metroid
+                    <label class="btn btn-secondary click" onclick="changeSource('metroid')">
+                      <input type="radio" name="options" id="optionCloudMetroidSource" value="" > Metroid
                     </label>
                     
                 </div>
                 <div class="hidden" id="order-options" data-toggle="buttons">
-                  <label class="btn btn-secondary active click">
-                    <input type="radio" name="options" id="optionOrderSource" > Order
+                  <label class="btn btn-secondary active click" onclick="orderChange(0)">
+                    <input type="radio" name="options" id="optionOrderSource" value="true" > Order
                   </label>
-                  <label class="btn btn-secondary click">
-                    <input type="radio" name="options" id="optionRandomSource" > Random
+                  <label class="btn btn-secondary click" onclick="orderChange(1)">
+                    <input type="radio" name="options" id="optionRandomSource" value="false" > Random
                   </label>
                   <p class="test-source" id="number-of-photos">Photos: </p>
                   <button class="custom-btn-large btn-11-large" onclick="jumpTo()">Jump to: </button>
-                  <input type="number" min="0"  class="placeholder-minutes" id="jump-to" />
+                  <input type="number" min="1" max="10" class="placeholder-minutes" id="jump-to" />
                 </div>
                 
                 <!--<p>Audio to avoid savescreen</p>-->

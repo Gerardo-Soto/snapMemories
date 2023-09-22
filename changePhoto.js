@@ -1,3 +1,20 @@
+const cloudSource = document.getElementById('optionCloudSource');
+const localSource = document.getElementById('optionLocalSource');
+const cloudPokemonSource = document.getElementById('optionCloudPokemonSource');
+const cloudMetroidSource = document.getElementById('optionCloudMetroidSource');
+
+const innerDiv = document.getElementById('inner-div');
+const innerDivBlur = document.getElementById('inner-div-blur');
+
+let indexAlbum = '';
+
+/** Random option */
+const optionRandomSource = document.getElementById('optionRandomSource');
+const isOrderChecked = document.getElementById('optionOrderSource');
+
+/** show the number of photos */
+const numberOfPhotos = document.getElementById('number-of-photos');
+const numberOfPhotosJumpTo = document.getElementById('jump-to');
 
 const album = {
     local: [
@@ -237,6 +254,41 @@ const album = {
     ],
 };
 
+// get numbber of photos
+(function () {
+    /** Check the album selected */
+    if (cloudSource.value == 'checked') {
+        indexAlbum = 'texas';
+    } else if (cloudMetroidSource.value == 'checked') {
+        indexAlbum = 'metroid';
+    } else if (cloudPokemonSource.value == 'checked') {
+        indexAlbum = 'pokemon';
+    } else {
+        indexAlbum = 'local';
+    };
+   
+    numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
+
+    numberOfPhotosJumpTo.max = album[indexAlbum].length;
+})();
+
+function checkNumberPhotos () {
+    /** Check the album selected */
+    if (cloudSource.value == 'checked') {
+        indexAlbum = 'texas';
+    } else if (cloudMetroidSource.value == 'checked') {
+        indexAlbum = 'metroid';
+    } else if (cloudPokemonSource.value == 'checked') {
+        indexAlbum = 'pokemon';
+    } else {
+        indexAlbum = 'local';
+    };
+   
+    numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
+
+    numberOfPhotosJumpTo.max = album[indexAlbum].length;
+}
+
 let currentPictureIndex = 0;
 
 // Stores the setInterval ID used by
@@ -270,44 +322,57 @@ function changeMinutesInterval() {
 };
 
 function changeImage() {
-    const cloudSource = document.getElementById('optionCloudSource');
-    const localSource = document.getElementById('optionLocalSource');
-    const cloudPokemonSource = document.getElementById('optionCloudPokemonSource');
-    const CloudMetroidSource = document.getElementById('optionCloudMetroidSource');
 
     /** Check the album selected */
-    let indexAlbum = '';
-    if (cloudSource.checked) {
+    if (cloudSource.value == 'checked') {
         indexAlbum = 'texas';
-    } else if (CloudMetroidSource.checked) {
+    } else if (cloudMetroidSource.value == 'checked') {
         indexAlbum = 'metroid';
-    } else if (cloudPokemonSource.checked) {
+    } else if (cloudPokemonSource.value == 'checked') {
         indexAlbum = 'pokemon';
     } else {
         indexAlbum = 'local';
     };
 
-    /** Random option */
-    const optionRandomSource = document.getElementById('optionRandomSource');
-
-    /** show the number of photos */
-    const numberOfPhotos = document.getElementById('number-of-photos');
+    
     numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
 
 
     // Clears the previous setInterval timer
     clearInterval(interval);
 
-    const innerDiv = document.getElementById('inner-div');
-    const innerDivBlur = document.getElementById('inner-div-blur');
+    if (optionRandomSource.value == 'true') {
+        console.log(`auto checked random option`);
+        prevImageRandom();
+    } else {
+        innerDiv.style.backgroundImage = `url(${album[indexAlbum][currentPictureIndex]})`;
+        innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][currentPictureIndex]})`;
+    
+        currentPictureIndex = (currentPictureIndex + 1) % album[indexAlbum].length;
+        console.log(`Album: ${indexAlbum}`);
+    
+        interval = setInterval(changeImage, intervalSeconds);
+    };
+};
 
-    innerDiv.style.backgroundImage = `url(${album[indexAlbum][currentPictureIndex]})`;
-    innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][currentPictureIndex]})`;
+function changeSource(source) {
+    cloudSource.value = '';
+    localSource.value = '';
+    cloudPokemonSource.value = ''
+    cloudMetroidSource.value = ''
+    if (source == 'cloud') {
+        cloudSource.value = 'checked';
+    } else if (source == 'pokemon') {
+        cloudPokemonSource.value = 'checked';
+    } else if (source == 'metroid') {
+        cloudMetroidSource.value = 'checked';
+    } else {
+        localSource.value = 'checked';
+    };
 
-    currentPictureIndex = (currentPictureIndex + 1) % album[indexAlbum].length;
-    console.log(`Album: ${indexAlbum}`);
-
-    interval = setInterval(changeImage, intervalSeconds);
+    checkNumberPhotos();
+    currentPictureIndex = 0;
+    changeImage();
 };
 
 //setInterval(changeImage, intervalSeconds );
@@ -319,24 +384,12 @@ let shuffleIndex = 0;
  * @param {string} side 
  */
 function changePicture(side) {
-    // change image
-    const innerDiv = document.getElementById('inner-div');
-    const innerDivBlur = document.getElementById('inner-div-blur');
 
-    // get album selected
-    const cloudSource = document.getElementById('optionCloudSource');
-    const localSource = document.getElementById('optionLocalSource');
-    const cloudPokemonSource = document.getElementById('optionCloudPokemonSource');
-    const CloudMetroidSource = document.getElementById('optionCloudMetroidSource');
-
-    /** Check the album selected */
-    // save album selected
-    let indexAlbum = '';
-    if (cloudSource.checked) {
+    if (cloudSource.value == 'checked') {
         indexAlbum = 'texas';
-    } else if (CloudMetroidSource.checked) {
+    } else if (cloudMetroidSource.value == 'checked') {
         indexAlbum = 'metroid';
-    } else if (cloudPokemonSource.checked) {
+    } else if (cloudPokemonSource.value == 'checked') {
         indexAlbum = 'pokemon';
     } else {
         indexAlbum = 'local';
@@ -344,24 +397,16 @@ function changePicture(side) {
 
     /** check random */
     //const optionOrderSource = document.getElementById('optionOrderSource');// start with false :(
-    const optionRandomSource = document.getElementById('optionRandomSource');
-    console.log(optionRandomSource.checked);// false, click: true
+    //const optionRandomSource = document.getElementById('optionRandomSource');
+    //console.log(optionRandomSource.checked);// false, click: true
 
     // check limit index
     if (side == "back") {
         console.log('back');
 
-        if (optionRandomSource == 'true') {
-            shuffleIndex--;
-            if (shuffleIndex < 0) {
-                shuffleIndex = album[indexAlbum].length - 1;
-            };
-
-            let indexShuffle = myShuffleArray[shuffleIndex] % album[indexAlbum].length;
-            console.log(`random: ${indexShuffle}`);
-
-            innerDiv.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
-            innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
+        if (optionRandomSource.value == 'true') {
+            console.log(`button back checked random option`);
+            prevImageRandom();
         } else {
 
             currentPictureIndex--;
@@ -403,12 +448,38 @@ function changePicture(side) {
     };
 };
 
+function orderChange(val) {
+    console.log(val);
+    if (val == 0) {
+        isOrderChecked.value = 'true';
+        optionRandomSource.value = 'false';
+    } else {
+        isOrderChecked.value = 'false';
+        optionRandomSource.value = 'true';
+    }
+};
+
+function prevImageRandom() {
+    shuffleIndex--;
+    if (shuffleIndex < 0) {
+        shuffleIndex = album[indexAlbum].length - 1;
+    };
+
+    let indexShuffle = myShuffleArray[shuffleIndex] % album[indexAlbum].length;
+    console.log(`random: ${indexShuffle}`);
+
+    innerDiv.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
+    innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
+};
+
 
 function jumpTo() {
-    const jumpPictureTo = parseInt(document.getElementById('jump-to').value);
+    const jumpPictureTo = parseInt(document.getElementById('jump-to').value) - 1;
     console.log(jumpPictureTo);
-
-    currentPictureIndex = jumpPictureTo;
+    if (Number.isInteger(jumpPictureTo)) {
+        currentPictureIndex = jumpPictureTo;
+        changeImage();
+    };
 };
 
 
@@ -434,6 +505,6 @@ const shuffle = (array) => {
 }; 
 
 
-const myShuffleArray = shuffle(numbersShuffle);
-console.log(myShuffleArray);
+const myShuffleArray = shuffle(articles);
+console.log(`myShuffleArray: ${myShuffleArray}`);
 
