@@ -2,11 +2,14 @@ const cloudSource = document.getElementById('optionCloudSource');
 const localSource = document.getElementById('optionLocalSource');
 const cloudPokemonSource = document.getElementById('optionCloudPokemonSource');
 const cloudMetroidSource = document.getElementById('optionCloudMetroidSource');
+const cloudWeddingSource = document.getElementById('optionWeddingSource');
+const cloudWinter2022 = document.getElementById('optionWinter2022Source');
+const cloudGow = document.getElementById('optionCloudGowSource'); 
 
 const innerDiv = document.getElementById('inner-div');
 const innerDivBlur = document.getElementById('inner-div-blur');
 
-let indexAlbum = '';
+let indexAlbum = 'local';
 
 /** Random option */
 const optionRandomSource = document.getElementById('optionRandomSource');
@@ -24,6 +27,7 @@ const album = {
         '/home/gerard/Pictures/save/sony_photos/IMG-20221229-WA0009.jpg',
     ],
     texas: [
+        //** 1er viaje */
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190814_071049.jpg?alt=media&token=0eb33d92-a04c-4dae-8675-a349f833dbb8',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190815_122846.jpg?alt=media&token=8bb5e0e4-4dab-47cf-8874-c6a40f9a5c32',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2F20190815_184353.jpg?alt=media&token=d188cf31-ebe1-4b40-909a-361f5c23d491',
@@ -74,7 +78,7 @@ const album = {
         /**  puerto vallarta */
         /*** ... */
 
-        /** Octubre */
+        /** Octubre  2021 */
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20211006-WA0003.jpg?alt=media&token=954aa983-87c8-4d45-9b26-77ecfa475887',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20211020-WA0000.jpg?alt=media&token=fb837114-f966-4821-9199-04051e40cb6a',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20211020-WA0011.jpg?alt=media&token=a2a5b7f9-e26c-4faa-a6b0-8b1f86f82cfe',
@@ -117,7 +121,7 @@ const album = {
 
 
 
-        /** octubre */
+        /** 30 Marzo 2022 */
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220430-WA0024.jpg?alt=media&token=a1168355-0370-4a95-bfd0-46c376e40987',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220430-WA0036.jpg?alt=media&token=897766c8-7802-47bd-b1e4-70afb785aa27',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220430-WA0038.jpg?alt=media&token=bf64ce71-dafe-4f44-af8b-4b73508d77bf',
@@ -150,6 +154,78 @@ const album = {
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220922-WA0110.jpg?alt=media&token=93a44b77-1fa7-4935-9c6c-36b6f3559b47',
         
         
+        /** Navidad 2022 */
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0010.jpg?alt=media&token=d4ad445b-a4e2-4278-98f9-027dae48ba3c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0011.jpg?alt=media&token=d37df69a-5cc0-4b22-84d4-ff0f9a9f3d90',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0014.jpg?alt=media&token=308b4d80-64a2-4ebd-bb28-7fb73db13464',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221225-WA0009.jpg?alt=media&token=3d1b0de4-2880-4ede-a8f3-7a6c74b8dc0a',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221229-WA0000.jpg?alt=media&token=13f8fb62-e9b1-4b31-bdaf-060517550879',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221229-WA0004.jpg?alt=media&token=db3a807e-2f07-4bda-8af3-f0ae6a82f316',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221229-WA0009.jpg?alt=media&token=982b6fc2-b5e2-4008-a3e4-58c83317c762',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221229-WA0010.jpg?alt=media&token=3faa7d62-e11f-492f-969c-47ee2fde1cd1',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221229-WA0041.jpg?alt=media&token=ecd334a6-5bf4-4750-8b71-1622a80c7b2d',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221229-WA0032.jpg?alt=media&token=9227f06f-d542-4164-8ede-d31a1114c28b',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221231-WA0003.jpg?alt=media&token=e3efe1b8-d802-44bb-930c-9e8b28a7709f',
+        
+        /** new year 2023 */
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221231-WA0008.jpg?alt=media&token=9fc9a1bb-563e-424b-833d-da4e8cbeff12',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230101-WA0002.jpg?alt=media&token=a45e2ef1-4544-4fd1-b6b3-288d76ee5b0d',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230101-WA0004.jpg?alt=media&token=06ea6e42-a047-44c2-958b-ed462d0aa70c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230101-WA0019.jpg?alt=media&token=5f4bcf85-c3ed-4cf8-b0f5-2c643fc61cc5',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230101-WA0025.jpg?alt=media&token=7d726ba8-33f5-4392-a719-7808322f8979',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230101-WA0024.jpg?alt=media&token=2109ac43-a028-4c33-8053-1f9650ca0099',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230101-WA0027.jpg?alt=media&token=3975a1cb-c4fa-4858-a13f-1adee59008b8',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230102-WA0013.jpg?alt=media&token=008cd9b5-55d0-4bef-a98d-f53e413f3698',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230102-WA0016.jpg?alt=media&token=bbcf9bd5-a07b-4ac7-b70c-3499db77023c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230102-WA0020.jpg?alt=media&token=066ccbfb-3c5b-4aab-b930-6fc468d003a6',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230102-WA0026.jpg?alt=media&token=92bd439a-0a25-48e1-bc84-a59dd89b178e',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0005.jpg?alt=media&token=c90a491e-b8c6-4b04-8fea-1cafc7c5867f',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0016.jpg?alt=media&token=498ed2df-1ac8-4c32-88f2-ed7a9fe872e7',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0021.jpg?alt=media&token=8d247f5a-9d08-443e-bb27-f8330bc469fc',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0023.jpg?alt=media&token=13a2ad5e-b676-486f-9988-dfe53b06a9f3',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0025.jpg?alt=media&token=5499a2f1-c2a1-42bd-906f-16536ec1a743',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0028.jpg?alt=media&token=3492dda3-4711-45e6-8afe-780506dbbeef',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0030.jpg?alt=media&token=93ed2ab8-4c7c-488a-b9fa-d236ee070778',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230104-WA0033.jpg?alt=media&token=35c2904e-a395-4129-9b9a-8b9f87f70ad6',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230108-WA0058.jpg?alt=media&token=cc96ad29-789b-465f-b62a-627f20c65de3',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20230111-WA0000.jpg?alt=media&token=8a4687e1-a052-42a8-bb15-3a5bbc125b82',
+        
+    ],
+    wedding: [
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220417-WA0008.jpg?alt=media&token=24984bf7-6fe3-454c-92c7-e824d66caf49',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220417-WA0009.jpg?alt=media&token=1105eaed-c9f7-4b70-8e54-2526849b4f56',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220430-WA0075.jpg?alt=media&token=535c6f06-1d93-482a-9ee6-9ff03b7d5dbe',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220430-WA0076.jpg?alt=media&token=47cecefe-cc39-4370-a884-9297ac619e14',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220417-WA0007.jpg?alt=media&token=60ebde62-503b-4ce1-a686-caaf4f95bcef',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220417-WA0003.jpg?alt=media&token=355bccfc-cd62-4468-a8f9-8f342fab4927',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220410-WA0008.jpg?alt=media&token=d8833017-1dc4-4355-905c-51399a41b474',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220417-WA0006.jpg?alt=media&token=73230f21-3c5e-469c-9d78-0d54cbe8469f',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0053.jpg?alt=media&token=c8c34f60-3e70-49c6-9dcc-d2ddde8244bf',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220430-WA0084.jpg?alt=media&token=d9543b4f-7c08-4547-b16b-fbdacd2142e1',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0033.jpg?alt=media&token=800e503f-dd17-4946-b2c2-3bcdc3f3442c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0042.jpg?alt=media&token=2b19a17d-f3d3-46c3-9de2-1b435b19cb3b',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0056.jpg?alt=media&token=d7115200-f8d9-49a1-95cf-02be965d480f',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0057.jpg?alt=media&token=d159b665-0fb5-44ae-b9ba-72c9b6670fc0',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0071.jpg?alt=media&token=f1ff5ae8-a5aa-405e-bf0e-9d2aa6347634',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220510-WA0072.jpg?alt=media&token=1dc9b90f-1089-46ef-bf49-43e7449b2d57',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220511-WA0022.jpg?alt=media&token=cb3033d3-e532-47d0-9203-1c561659839c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220511-WA0039.jpg?alt=media&token=405eb65f-1d7d-4afe-aeea-08fc942e41ff',    
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220511-WA0042.jpg?alt=media&token=5e52194d-025c-40a6-96aa-aaf648be5cf3',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220511-WA0044.jpg?alt=media&token=1a599cd4-de9c-4a31-a052-6ac469403b0b',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0003.jpg?alt=media&token=8d2a4f34-1234-480e-a87f-60ba37cd4b44',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0007.jpg?alt=media&token=300f4032-99f3-4f36-bb73-221e28975a7a',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0013.jpg?alt=media&token=8b41e3a5-73b1-4dc0-8e3c-63f58d33859c',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0014.jpg?alt=media&token=8b125e67-aec2-4bdc-9d82-2b3394c4bcea',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0016.jpg?alt=media&token=7967e387-d0b2-4b2e-a6b9-c6481acf28c3',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0017.jpg?alt=media&token=d700f427-cfe3-45a9-a000-b6a9a8d2e203',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0021.jpg?alt=media&token=2cabf11d-309b-4f1f-a04e-d1bfe25479a6',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0038.jpg?alt=media&token=445e03a7-ad2d-490b-822c-6cacd3e2bd96',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0051.jpg?alt=media&token=8314c2fe-deee-4898-812f-66504bb4dd8f',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0053.jpg?alt=media&token=0563b49b-0b54-4bbd-aad2-454d8ce462ba',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20220513-WA0100.jpg?alt=media&token=2c5c79c4-feed-4ccb-93f5-9740adc0ec7b',
+
+    ],
+    winter2022: [
         /** Navidad 2022 */
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0010.jpg?alt=media&token=d4ad445b-a4e2-4278-98f9-027dae48ba3c',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FIMG-20221219-WA0011.jpg?alt=media&token=d37df69a-5cc0-4b22-84d4-ff0f9a9f3d90',
@@ -252,37 +328,46 @@ const album = {
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_metroid_collection.jpg?alt=media&token=1a3c4c3f-5a9c-4edc-b062-e08849d74eae',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmetroid%2FMetroid_5_metroid_cards.png?alt=media&token=d0f1ec62-c698-433c-abeb-f059a7b00fa1',
     ],
+    gow: [
+
+    ],
 };
 
 // get numbber of photos
 (function () {
     /** Check the album selected */
-    if (cloudSource.value == 'checked') {
-        indexAlbum = 'texas';
-    } else if (cloudMetroidSource.value == 'checked') {
-        indexAlbum = 'metroid';
-    } else if (cloudPokemonSource.value == 'checked') {
-        indexAlbum = 'pokemon';
-    } else {
-        indexAlbum = 'local';
-    };
-   
+    checkAlbumSelected();
+    console.log(`t1:${indexAlbum}`);
     numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
 
     numberOfPhotosJumpTo.max = album[indexAlbum].length;
 })();
 
+function checkAlbumSelected(source) {
+    setTimeout(function () {
+        console.log(source);
+        if (cloudSource.parentNode.classList.contains('active')) {
+            indexAlbum = 'texas';
+        } else if (cloudMetroidSource.parentNode.classList.contains('active')) {
+            indexAlbum = 'metroid';
+        } else if (cloudPokemonSource.parentNode.classList.contains('active')) {
+            indexAlbum = 'pokemon';
+        } else if (cloudWeddingSource.parentNode.classList.contains('active')) {
+            indexAlbum = 'wedding';
+        } else if (cloudWinter2022.parentNode.classList.contains('active')) {
+            indexAlbum = 'winter2022';
+        } else if (cloudGow.parentNode.classList.contains('active')) {
+            indexAlbum = 'gow';    
+        } else {
+            indexAlbum = 'local';
+        };
+        
+    }, 200);
+};
+
 function checkNumberPhotos () {
     /** Check the album selected */
-    if (cloudSource.value == 'checked') {
-        indexAlbum = 'texas';
-    } else if (cloudMetroidSource.value == 'checked') {
-        indexAlbum = 'metroid';
-    } else if (cloudPokemonSource.value == 'checked') {
-        indexAlbum = 'pokemon';
-    } else {
-        indexAlbum = 'local';
-    };
+    checkAlbumSelected();
    
     numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
 
@@ -324,16 +409,7 @@ function changeMinutesInterval() {
 function changeImage() {
 
     /** Check the album selected */
-    if (cloudSource.value == 'checked') {
-        indexAlbum = 'texas';
-    } else if (cloudMetroidSource.value == 'checked') {
-        indexAlbum = 'metroid';
-    } else if (cloudPokemonSource.value == 'checked') {
-        indexAlbum = 'pokemon';
-    } else {
-        indexAlbum = 'local';
-    };
-
+    checkAlbumSelected();
     
     numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
 
@@ -356,22 +432,17 @@ function changeImage() {
 };
 
 function changeSource(source) {
-    cloudSource.value = '';
-    localSource.value = '';
-    cloudPokemonSource.value = ''
-    cloudMetroidSource.value = ''
-    if (source == 'cloud') {
-        cloudSource.value = 'checked';
-    } else if (source == 'pokemon') {
-        cloudPokemonSource.value = 'checked';
-    } else if (source == 'metroid') {
-        cloudMetroidSource.value = 'checked';
-    } else {
-        localSource.value = 'checked';
-    };
-
-    checkNumberPhotos();
     currentPictureIndex = 0;
+    
+    //checkAlbumSelected(source);
+    console.log(`f:changeSource - arg:${source}`);
+    
+    indexAlbum = source;
+    
+    console.log(`f:changeSource - change indexAlbum: ${indexAlbum}`);
+   
+    //console.log(indexAlbum);
+    checkNumberPhotos();
     changeImage();
 };
 
@@ -385,16 +456,8 @@ let shuffleIndex = 0;
  */
 function changePicture(side) {
 
-    if (cloudSource.value == 'checked') {
-        indexAlbum = 'texas';
-    } else if (cloudMetroidSource.value == 'checked') {
-        indexAlbum = 'metroid';
-    } else if (cloudPokemonSource.value == 'checked') {
-        indexAlbum = 'pokemon';
-    } else {
-        indexAlbum = 'local';
-    };
-
+    checkAlbumSelected();
+   
     /** check random */
     //const optionOrderSource = document.getElementById('optionOrderSource');// start with false :(
     //const optionRandomSource = document.getElementById('optionRandomSource');
@@ -424,7 +487,7 @@ function changePicture(side) {
     } else {
         console.log('next');
         
-        if (optionRandomSource == 'true') {
+        if (optionRandomSource.value == 'true') {
             shuffleIndex++;
             let indexShuffle = myShuffleArray[shuffleIndex] % album[indexAlbum].length;
             console.log(`random: ${indexShuffle}`);

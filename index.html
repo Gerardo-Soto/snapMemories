@@ -103,14 +103,24 @@
                     <button class="custom-btn btn-11" onclick="changeFrame(2)">Frame 3</button>
                     <button class="custom-btn btn-11" onclick="changeFrame(3)">Frame 4</button>
                     <button class="custom-btn btn-11" onclick="changeFrame(4)">Frame 5</button>
+                    <p>Blur</p>
+                    <label class="btn btn-secondary active click" onclick="blurChange(1)">
+                      <input type="radio" name="options" id="optionOrderSource" value="true" > ON
+                    </label>
+                    <label class="btn btn-secondary click" onclick="blurChange(0)">
+                      <input type="radio" name="options" id="optionRandomSource" value="false" > OFF
+                    </label>
                 </div>
                 <div class="hidden" id="album-options" data-toggle="buttons">
                     <p class="test-source">Source:</p>
-                    <label class="btn btn-secondary click" onclick="changeSource('cloud')">
-                      <input type="radio" name="options" id="optionCloudSource" value=""> Cloud
+                    <label class="btn btn-secondary click" onclick="changeSource('texas')">
+                      <input type="radio" name="options" id="optionCloudSource" value=""> Todas
                     </label>
-                    <label class="btn btn-secondary click active" onclick="changeSource('local')">
-                      <input type="radio" name="options" id="optionLocalSource" value=""> Local +
+                    <label class="btn btn-secondary click" onclick="changeSource('wedding')">
+                      <input type="radio" name="options" id="optionWeddingSource" value=""> Boda
+                    </label>
+                    <label class="btn btn-secondary click" onclick="changeSource('winter2022')">
+                      <input type="radio" name="options" id="optionWinter2022Source" value=""> Invierno 2022
                     </label>
                     <label class="btn btn-secondary click" onclick="changeSource('pokemon')">
                       <input type="radio" name="options" id="optionCloudPokemonSource" value="" > Pokemon
@@ -118,7 +128,14 @@
                     <label class="btn btn-secondary click" onclick="changeSource('metroid')">
                       <input type="radio" name="options" id="optionCloudMetroidSource" value="" > Metroid
                     </label>
-                    
+                    <!--
+                    <label class="btn btn-secondary click" onclick="changeSource('gow')">
+                      <input type="radio" name="options" id="optionCloudGowSource" value="" > GOW
+                    </label>
+                    -->
+                    <label class="btn btn-secondary click active" onclick="changeSource('local')">
+                      <input type="radio" name="options" id="optionLocalSource" value=""> Local +
+                    </label>
                 </div>
                 <div class="hidden" id="order-options" data-toggle="buttons">
                   <label class="btn btn-secondary active click" onclick="orderChange(0)">

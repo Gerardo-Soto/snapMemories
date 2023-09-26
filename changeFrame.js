@@ -13,4 +13,9 @@ function changeFrame(number) {
 
     staticDiv.style.backgroundImage = `url(${frames[number]})`;
 
+    if (number == 2) {
+        console.log(`change class`);
+        
+    }
+
 }
