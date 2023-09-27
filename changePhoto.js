@@ -10,6 +10,7 @@ const innerDiv = document.getElementById('inner-div');
 const innerDivBlur = document.getElementById('inner-div-blur');
 
 let indexAlbum = 'local';
+let blurOption = true;
 
 /** Random option */
 const optionRandomSource = document.getElementById('optionRandomSource');
@@ -479,7 +480,12 @@ function changePicture(side) {
             console.log(`orden: ${currentPictureIndex}`);
 
             innerDiv.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;
-            innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;        
+            if (blurOption) {
+                innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;
+            } else {
+                innerDivBlur.style.backgroundImage = `url()`;
+                innerDivBlur.style.backgroundColor = `black`;
+            };
             
         };
         
@@ -493,14 +499,24 @@ function changePicture(side) {
             console.log(`random: ${indexShuffle}`);
 
             innerDiv.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
-            innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][indexShuffle]})`;
+            if (blurOption) {
+                innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;
+            } else {
+                innerDivBlur.style.backgroundImage = `url()`;
+                innerDivBlur.style.backgroundColor = `black`;
+            };
         } else {
 
             currentPictureIndex++;
             console.log(`orden: ${currentPictureIndex}`);
 
             innerDiv.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;
-            innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;        
+            if (blurOption) {
+                innerDivBlur.style.backgroundImage = `url(${album[indexAlbum][(currentPictureIndex) % album[indexAlbum].length]})`;
+            } else {
+                innerDivBlur.style.backgroundImage = `url()`;
+                innerDivBlur.style.backgroundColor = `black`;
+            };
             
         };
         //console.log(currentPictureIndex);
@@ -546,6 +562,17 @@ function jumpTo() {
 };
 
 
+function blurChange(option) {
+    if (option == 1) {
+        blurOption = true;
+        innerDiv.classList.add('inner-div-border-radius-toggle-blur');
+    } else {
+        blurOption = false;
+        innerDiv.classList.remove('inner-div-border-radius-toggle-blur');
+    };
+    console.log(`change blur: ${blurOption}`);
+};
+
 /** random generator */
 // declare the function 
 let articles = [];
@@ -571,3 +598,20 @@ const shuffle = (array) => {
 const myShuffleArray = shuffle(articles);
 console.log(`myShuffleArray: ${myShuffleArray}`);
 
+// add an keydown event
+document.addEventListener("keydown", function(event){
+    // check if the key is left arrow
+    if (event.key == 'ArrowLeft') {
+        changePicture("back");
+    };
+
+    if (event.key == 'ArrowRight') {
+        changePicture("next");
+    };
+
+    if (event.key == 'ArrowUp') {
+
+    }
+
+    console.log(`event: ${event.key}`);
+})

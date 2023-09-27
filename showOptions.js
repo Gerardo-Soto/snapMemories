@@ -8,7 +8,9 @@ const musicOptionsMenu = document.getElementById('music-options');
 function showTimer() {
     
     // remove all style to hide menu
+    framesOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
     framesOptionsMenu.classList.add('hidden');
+
     musicOptionsMenu.classList.add('hidden');
     
     orderOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
@@ -35,6 +37,7 @@ function showFrames() {
     
     //show menu
     framesOptionsMenu.classList.remove('hidden');
+    framesOptionsMenu.classList.add('btn-group', 'btn-group-toggle');
 }
 
 
@@ -42,8 +45,10 @@ function showAlbum() {
 
     // remove all style to hide menu
     minutesOptionsMenu.classList.add('hidden');
-    framesOptionsMenu.classList.add('hidden');
     musicOptionsMenu.classList.add('hidden');
+    
+    framesOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
+    framesOptionsMenu.classList.add('hidden');
 
     orderOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
     orderOptionsMenu.classList.add('hidden');
@@ -57,8 +62,10 @@ function showAlbum() {
 function showOrder() {
     // remove all style to hide menu
     minutesOptionsMenu.classList.add('hidden');
-    framesOptionsMenu.classList.add('hidden');
     musicOptionsMenu.classList.add('hidden');
+    
+    framesOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
+    framesOptionsMenu.classList.add('hidden');
 
     albumOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
     albumOptionsMenu.classList.add("hidden");
@@ -72,6 +79,8 @@ function showOrder() {
 function showMusic() {
     // remove all style to hide menu
     minutesOptionsMenu.classList.add('hidden');
+
+    framesOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
     framesOptionsMenu.classList.add('hidden');
     
     orderOptionsMenu.classList.remove('btn-group', 'btn-group-toggle');
