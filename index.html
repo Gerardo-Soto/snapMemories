@@ -13,25 +13,25 @@
     <title>SnapMemories</title>
 </head>
 <body>
-    <div class="static-div" id="static-div">
-        <!-- Contenido del div estático -->
-        <button class="top-button" onclick="toggleFullScreen(document.body)"></button>
-        
-        <div class="inner-div-blur" id="inner-div-blur"></div>
-        
-        <div class="inner-div inner-div-border-radius-toggle-blur" id="inner-div"></div>
-        
-        <!-- BUTTONS-->
-        <div class="center-container">
-          <button class="prev-button" onclick="changePicture('back')"></button>
-          <button type="button" class="center-button" id="exampleModal" data-toggle="modal" data-target="#exampleModalCenter"></button>
-          <button class="next-button" onclick="changePicture('next')"></button>
-        </div>
+  <div class="static-div" id="static-div">
+    <!-- Contenido del div estático -->
+    <button class="top-button" onclick="toggleFullScreen(document.body)"></button>
+    
+    <div class="inner-div-blur" id="inner-div-blur"></div>
+    
+    <div class="inner-div inner-div-border-radius-toggle-blur" id="inner-div"></div>
+    
+    <!-- BUTTONS-->
+    <div class="center-container">
+      <button class="prev-button" onclick="changePicture('back')"></button>
+      <button type="button" class="center-button" id="exampleModal" data-toggle="modal" data-target="#exampleModalCenter"></button>
+      <button class="next-button" onclick="changePicture('next')"></button>
     </div>
+  </div>
     
 
-<!-- Modal Options -->
-<div class="modal  fade " id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- Modal Options -->
+  <div class="modal  fade " id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -41,13 +41,13 @@
           </button>
         </div>
         <div class="modal-body">
-            <div >
-                <h4>Tutorial</h4>
-                <!-- Contenido del div dinámico -->
-                <div>
-                    <img class="img-tutorial" src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FsnapMemories_tutorial_v2.png?alt=media&token=80844572-7a2c-4afe-98b2-5bc438f8468f" alt="SnapMemories tutorial UI" />
-                </div>
+          <div >
+            <h4>Tutorial</h4>
+            <!-- Contenido del div dinámico -->
+            <div>
+              <img class="img-tutorial" src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FsnapMemories_tutorial_v2.png?alt=media&token=80844572-7a2c-4afe-98b2-5bc438f8468f" alt="SnapMemories tutorial UI" />
             </div>
+          </div>
         
         </div>
         <div class="modal-footer">
@@ -59,14 +59,13 @@
 
 
 
-    <!-- Modal Options -->
-<div class="modal  fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- Modal Options -->
+  <div class="modal  fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalCenterTitle">SnapMemories / Options</h5>
           
-
           <div class="container">
             <nav>
               <ul>
