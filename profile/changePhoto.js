@@ -9,7 +9,7 @@ const cloudGow = document.getElementById('optionCloudGowSource');
 const innerDiv = document.getElementById('inner-div');
 const innerDivBlur = document.getElementById('inner-div-blur');
 
-let indexAlbum = 'local';
+let indexAlbum = 'texas';
 let blurOption = true;
 
 /** Random option */
@@ -75,8 +75,6 @@ function checkAlbumSelected(source) {
             indexAlbum = 'wedding';
         } else if (cloudWinter2022.parentNode.classList.contains('active')) {
             indexAlbum = 'winter2022';
-        } else if (cloudGow.parentNode.classList.contains('active')) {
-            indexAlbum = 'gow';    
         } else {
             indexAlbum = 'local';
         };
