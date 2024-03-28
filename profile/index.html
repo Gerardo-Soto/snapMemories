@@ -3,9 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./../rememberPhotos.css">
+    <link rel="stylesheet" href="./../scrollStyle.css">
+    <link rel="stylesheet" href="./../buttonsOptions.css">
+    <link rel="stylesheet" href="./../toggleFullScreen.css">
+    <link rel="stylesheet" href="./../navigationBarMenu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FsnaMemories_icon_html.png?alt=media&token=386f6845-8d95-472a-95d5-aa6b326e273a" type="image/x-icon">
+    <title>SnapMemories</title>
 </head>
 <body>
-    <h5>new test for sub domain</h5>
+  <div class="static-div" id="static-div">
+    <!-- Contenido del div estático -->
+    <button class="top-button" onclick="toggleFullScreen(document.body)"></button>
+    
+    <div class="inner-div-blur" id="inner-div-blur"></div>
+    
+    <div class="inner-div inner-div-border-radius-toggle-blur" id="inner-div"></div>
+    
+    <!-- BUTTONS-->
+    <div class="center-container">
+      <button class="prev-button" onclick="changePicture('back')"></button>
+      <button type="button" class="center-button" id="exampleModal" data-toggle="modal" data-target="#exampleModalCenter"></button>
+      <button class="next-button" onclick="changePicture('next')"></button>
+    </div>
+  </div>
+    
+
+  <!-- Modal Options -->
+  <div class="modal  fade " id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalCenterTitle">Welcome to SnapMemories</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div >
+            <h4>Tutorial</h4>
+            <!-- Contenido del div dinámico -->
+            <div>
+              <img class="img-tutorial" src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FsnapMemories_tutorial_v2.png?alt=media&token=80844572-7a2c-4afe-98b2-5bc438f8468f" alt="SnapMemories tutorial UI" />
+            </div>
+          </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal Options -->
+  <div class="modal  fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">SnapMemories / Options</h5>
+          
+          <div class="container">
+            <nav>
+              <ul>
+                <li class="" onclick="showTimer()">Timer</li>
+                <li class="" onclick="showFrames()">Frames</li>
+                <li class="" onclick="showAlbum()">Album</li>
+                <li class="" onclick="showOrder()">Order</li>
+                <li class="" onclick="showMusic()">Music</li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div >
+            <!-- Contenido del div dinámico -->
+            <div class="minutes" id="minutes-options">
+              <!--<button class="custom-btn btn-11" onclick="changeInterval(0.166)">10 seg</button>-->
+              <button class="custom-btn btn-11" onclick="changeInterval(0.5)">30 seg</button>
+              <button class="custom-btn btn-11" onclick="changeInterval(1)">1 min</button>
+              <button class="custom-btn btn-11" onclick="changeInterval(5)">5 min</button>
+              <button class="custom-btn btn-11" onclick="changeInterval(10)">10 min</button>
+              <button class="custom-btn btn-11" onclick="changeInterval(30)">30 min</button>
+              <input type="number" min="1" class="placeholder-minutes" id="placeholder-minutes" placeholder="minutes" >
+              <button class="custom-btn btn-11" onclick="changeMinutesInterval()">Set</button>
+              
+            </div>
+            <div class="hidden" id="frames-options" data-toggle="buttons">
+              <button class="custom-btn btn-11" onclick="changeFrame(0)">Frame 1</button>
+              <button class="custom-btn btn-11" onclick="changeFrame(1)">Frame 2</button>
+              <button class="custom-btn btn-11" onclick="changeFrame(2)">Frame 3</button>
+              <button class="custom-btn btn-11" onclick="changeFrame(3)">Frame 4</button>
+              <button class="custom-btn btn-11" onclick="changeFrame(4)">Frame 5</button>
+              
+              <p class="test-source">Blur:</p>
+              <label class="btn btn-secondary active click" onclick="blurChange(1)">
+                <input type="radio" name="blur" id="optionBlurOn" value="true" > ON
+              </label>
+              <label class="btn btn-secondary click" onclick="blurChange(0)">
+                <input type="radio" name="blur" id="optionBlurOff" value="false" > OFF
+              </label>
+            </div>
+
+            <div class="hidden" id="album-options" data-toggle="buttons">
+              <p class="test-source">Source:</p>
+              <label class="btn btn-secondary click" onclick="changeSource('texas')">
+                <input type="radio" name="options" id="optionCloudSource" value=""> Forests
+              </label>
+              <label class="btn btn-secondary click" onclick="changeSource('wedding')">
+                <input type="radio" name="options" id="optionWeddingSource" value=""> Beaches
+              </label>
+              <label class="btn btn-secondary click" onclick="changeSource('winter2022')">
+                <input type="radio" name="options" id="optionWinter2022Source" value=""> Oasis
+              </label>
+              <label class="btn btn-secondary click" onclick="changeSource('pokemon')">
+                <input type="radio" name="options" id="optionCloudPokemonSource" value="" > Waterfalls
+              </label>
+              <label class="btn btn-secondary click" onclick="changeSource('metroid')">
+                <input type="radio" name="options" id="optionCloudMetroidSource" value="" > Lakes
+              </label>
+              <!--
+              <label class="btn btn-secondary click" onclick="changeSource('gow')">
+                <input type="radio" name="options" id="optionCloudGowSource" value="" > GOW
+              </label>
+              -->
+              <label class="btn btn-secondary click active" onclick="changeSource('local')">
+                <input type="radio" name="options" id="optionLocalSource" value=""> Local +
+              </label>
+            </div>
+
+            <div class="hidden" id="order-options" data-toggle="buttons">
+              <label class="btn btn-secondary active click" onclick="orderChange(0)">
+                <input type="radio" name="options" id="optionOrderSource" value="true" > Order
+              </label>
+              <label class="btn btn-secondary click" onclick="orderChange(1)">
+                <input type="radio" name="options" id="optionRandomSource" value="false" > Random
+              </label>
+              <p class="test-source" id="number-of-photos">Photos: </p>
+              <button class="custom-btn-large btn-11-large" onclick="jumpTo()">Jump to: </button>
+              <input type="number" min="1" max="10" class="placeholder-minutes" id="jump-to" />
+            </div>
+            
+            <!--<p>Audio to avoid savescreen</p>-->
+            <div class="audio-track hidden" id="music-options">
+              <div>
+                <label for="track-1">Pokemon</label>
+                <audio class="audio-track" id="track-1" controls loop>
+                  <source src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Ftutorial%2FPok%C3%A9mon%20-%20The%20Matter's%20Settled.mp3?alt=media&token=5a518d7d-988b-438b-ad49-ff6b28374288" />
+                </audio> 
+              </div>
+              <div>
+                <label for="track-2">Lake</label>
+                <audio class="audio-track" id="track-2" controls loop>
+                  <source src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmusic%2Fchill_water_n_birds.mp3?alt=media&token=3720447b-eb4b-4853-90b9-e0bc2f57bf05" />
+                </audio> 
+
+              </div>
+              <div>
+                <label for="track-3">Forest & Birds</label>
+                <audio class="audio-track" id="track-3" controls autoplay loop>
+                  <source src="https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2Fmusic%2Fforest_birdsong_part_1.mp3?alt=media&token=a1f81730-3e66-466b-b778-69bacf8bc6dd" />
+                </audio> 
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="custom-btn-large btn-11-large" onclick="toggleFullScreen(document.body)">Full Screen</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#tutorialModal">Help</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./../startDemoModal.js"></script>
+  <script src="./../scrollHidden.js"></script>
+  <script src="./changePhoto.js"></script>
+  <script src="./../changeFrame.js"></script>
+  <script src="./../showOptions.js"></script>
+  <script src="./../toggleFullScreen.js"></script>
+
+
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
 </body>
 </html>
