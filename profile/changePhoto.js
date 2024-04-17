@@ -34,18 +34,27 @@ const album = {
         // beaches
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fplaya%2Fplaya_1.jpg?alt=media&token=88d39a6d-c273-41d1-8750-a748cb5205af',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fplaya%2Fplaya_2.jpg?alt=media&token=b9698dc1-e7ad-4337-94d6-a3c7806de8ea',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fplaya%2Fplaya_3.jpg?alt=media&token=48b43e08-71f0-4cc0-86d8-27047540f016',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fplaya%2Fplaya_4.jpg?alt=media&token=bf7a0f69-e494-4833-9e01-601ed07c5f84',
     ],
     winter2022: [
-        /** Navidad 2022 */
-        '',
+        /** Oasis */
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fvolcan%2Fvolcan_1.jpg?alt=media&token=456e7bee-4f74-4446-a857-0521a7c4b7de',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fvolcan%2Fvolcan_2.jpg?alt=media&token=b86fd171-4404-477b-b4fc-15f5a7a5af4f',
         
     ],
     pokemon: [
-        '',
+        // waterfall
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fcascadas%2Fwatedfall_1.jpg?alt=media&token=042b5aff-6110-4d8d-ae44-5b51f12c06a3',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fcascadas%2Fwatedfall_2.jpg?alt=media&token=75f3defd-adfa-4bf2-b5cc-3aa7f7f04ebd',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Fcascadas%2Fwatedfall_3.jpg?alt=media&token=8283e8e9-d9f7-4c6f-b0ed-d139ea459948',
     ],
     metroid: [
-        // Metroid 1
-        '',
+        // lakes
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Foasis%2Flagos_1.jpg?alt=media&token=7c65d4e3-9f81-4a21-8fea-5c215ce80fed',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Foasis%2Flagos_2.jpg?alt=media&token=3257da48-3a17-41f8-ad4f-c81b91d87e5a',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Foasis%2Flagos_3.jpg?alt=media&token=5fc03220-e44b-41c3-a550-388d86a47b9e',
+        'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Foasis%2Flagos_4.jpg?alt=media&token=6ce3f85b-def5-4821-890c-acd4a51852ae',
     ],
     gow: [
 
