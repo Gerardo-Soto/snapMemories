@@ -56,9 +56,6 @@ const album = {
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Foasis%2Flagos_3.jpg?alt=media&token=5fc03220-e44b-41c3-a550-388d86a47b9e',
         'https://firebasestorage.googleapis.com/v0/b/platzivideo-gerard.appspot.com/o/snapMemories%2FsnapMemories_Demo%2Foasis%2Flagos_4.jpg?alt=media&token=6ce3f85b-def5-4821-890c-acd4a51852ae',
     ],
-    gow: [
-
-    ],
 };
 
 // get numbber of photos
