@@ -17,9 +17,16 @@ const optionRandomSource = document.getElementById('optionRandomSource');
 const isOrderChecked = document.getElementById('optionOrderSource');
 
 /** show the number of photos */
-const numberOfPhotos = document.getElementById('number-of-photos');
+const numberOfPhotosSourceSection = document.getElementById('number-of-photos-source-section');
+const numberOfPhotosOrderSection = document.getElementById('number-of-photos-order-section');
+
 const numberOfPhotosJumpTo = document.getElementById('jump-to');
 
+
+/**
+ * firebase 
+ * bandwidth> https://console.firebase.google.com/project/platzivideo-gerard/storage/usage/current-billing/total_bytes?hl=es-419
+ */
 const album = {
     texas: [
         // forest
@@ -58,12 +65,13 @@ const album = {
     ],
 };
 
-// get numbber of photos
+// get numbber of photos`
 (function () {
     /** Check the album selected */
     checkAlbumSelected();
     console.log(`t1:${indexAlbum}`);
-    numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
+    numberOfPhotosOrderSection.textContent = `Photos: ${album[indexAlbum].length}`;
+    numberOfPhotosSourceSection.textContent = `Photos: ${album[indexAlbum].length}`;
 
     numberOfPhotosJumpTo.max = album[indexAlbum].length;
 })();
@@ -92,7 +100,8 @@ function checkNumberPhotos () {
     /** Check the album selected */
     checkAlbumSelected();
    
-    numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
+    numberOfPhotosOrderSection.textContent = `Photos: ${album[indexAlbum].length}`;
+    numberOfPhotosSourceSection.textContent = `Photos: ${album[indexAlbum].length}`;
 
     numberOfPhotosJumpTo.max = album[indexAlbum].length;
 }
@@ -134,7 +143,8 @@ function changeImage() {
     /** Check the album selected */
     checkAlbumSelected();
     
-    numberOfPhotos.textContent = `Photos: ${album[indexAlbum].length}`;
+    numberOfPhotosOrderSection.textContent = `Photos: ${album[indexAlbum].length}`;
+    numberOfPhotosSourceSection.textContent = `Photos: ${album[indexAlbum].length}`;
 
 
     // Clears the previous setInterval timer

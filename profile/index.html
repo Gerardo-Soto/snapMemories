@@ -140,9 +140,10 @@
               <label class="btn btn-secondary click " onclick="changeSource('local')">
                 <input type="radio" name="options" id="optionLocalSource" value=""> Local +
               </label>
-              <p class="test-source" id="number-of-photos">Photos: </p>
+              <p class="test-source" id="number-of-photos-source-section">Photos: </p>
             </div>
 
+            <!-- Order section-->
             <div class="hidden" id="order-options" data-toggle="buttons">
               <label class="btn btn-secondary active click" onclick="orderChange(0)">
                 <input type="radio" name="options" id="optionOrderSource" value="true" > Order
@@ -150,12 +151,12 @@
               <label class="btn btn-secondary click" onclick="orderChange(1)">
                 <input type="radio" name="options" id="optionRandomSource" value="false" > Random
               </label>
-              <p class="test-source" id="number-of-photos">Photos: </p>
+              <p class="test-source" id="number-of-photos-order-section">Photos: </p>
               <button class="custom-btn-large btn-11-large" onclick="jumpTo()">Jump to: </button>
               <input type="number" min="1" max="10" class="placeholder-minutes" id="jump-to" />
             </div>
             
-            <!--<p>Audio to avoid savescreen</p>-->
+            <!--<p>Audio to avoid save screen section</p>-->
             <div class="audio-track hidden" id="music-options">
               <div>
                 <label for="track-2">Lake</label>
