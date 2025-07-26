@@ -21,7 +21,7 @@
     <div class="inner-div-blur" id="inner-div-blur"></div>
         
     <div class="inner-div inner-div-border-radius-toggle-blur" id="inner-div">
-      <div class="card-shine"></div>
+      <div class="card-shine" id="card-shine"></div>
     </div>
         
     <!-- BUTTONS-->
@@ -108,13 +108,32 @@
               <button class="custom-btn btn-11" onclick="changeFrame(3)">Frame 4</button>
               <button class="custom-btn btn-11" onclick="changeFrame(4)">Frame 5</button>
               
-              <p class="test-source">Blur:</p>
-              <label class="btn btn-secondary active click" onclick="blurChange(1)">
-                <input type="radio" name="blur" id="optionBlurOn" value="true" > ON
-              </label>
-              <label class="btn btn-secondary click" onclick="blurChange(0)">
-                <input type="radio" name="blur" id="optionBlurOff" value="false" > OFF
-              </label>
+              <div>
+                <p class="test-source">Blur:</p>
+                <label class="btn btn-secondary active click" onclick="blurChange(1)">
+                  <input type="radio" name="blur" id="optionBlurOn" value="true" > ON
+                </label>
+                <label class="btn btn-secondary click" onclick="blurChange(0)">
+                  <input type="radio" name="blur" id="optionBlurOff" value="false" > OFF
+                </label>
+  
+                <p class="test-source">River:</p>
+                <label class="btn btn-secondary active click" onclick="riverChange(1)">
+                  <input type="radio" name="blur" id="optionBlurOn" value="true" > ON
+                </label>
+                <label class="btn btn-secondary click" onclick="riverChange(0)">
+                  <input type="radio" name="blur" id="optionBlurOff" value="false" > OFF
+                </label>
+
+                <p class="test-source">Frame:</p>
+                <label class="btn btn-secondary active click" onclick="frameChange(1)">
+                  <input type="radio" name="blur" id="optionBlurOn" value="true" > ON
+                </label>
+                <label class="btn btn-secondary click" onclick="frameChange(0)">
+                  <input type="radio" name="blur" id="optionBlurOff" value="false" > OFF
+                </label>
+
+              </div>
             </div>
 
             <div class="hidden" id="album-options" data-toggle="buttons">

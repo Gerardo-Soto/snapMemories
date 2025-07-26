@@ -7,6 +7,7 @@ const cloudWinter2022 = document.getElementById('optionWinter2022Source');
 const cloudGow = document.getElementById('optionCloudGowSource'); 
 
 const innerDiv = document.getElementById('inner-div');
+const cardShine = document.getElementById('card-shine');
 const innerDivBlur = document.getElementById('inner-div-blur');
 
 let indexAlbum = 'local';
@@ -572,6 +573,20 @@ function blurChange(option) {
     };
     console.log(`change blur: ${blurOption}`);
 };
+
+function riverChange(option) {
+    if (option == 1) {
+        riverOption = true;
+        cardShine.classList.add('card-shine');
+    } else {
+        riverOption = false;
+        cardShine.classList.remove('card-shine');
+    };
+    console.log(`change river: ${riverOption}`);
+    
+}
+
+
 
 /** random generator */
 // declare the function 

@@ -1,32 +1,35 @@
 
 
-/* El elemento que crea el efecto de brillo */
 .card-shine {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    /* Inicialmente fuera de la vista de la tarjeta, en la esquina superior izquierda */
-    top: -100%;
-    left: -100%;
-    /* Tamaño grande para cubrir la tarjeta diagonalmente */
-    /* Degradado lineal que va de transparente a blanco semi-transparente y de nuevo a transparente */
+    position: fixed; /* Posiciona el brillo con respecto al viewport */
+    top: 12.2%;
+    left: 9.5%;
+    width: 81.4%; /* Ancho completo del viewport */
+    height: 75.3%; /* Alto completo del viewport */
+    z-index: 1; /* Coloca el brillo detrás de todo el contenido */
+    pointer-events: none; /* Asegura que el brillo no interfiera con los eventos del mouse */
+    overflow: hidden; /* Recorta el pseudo-elemento de brillo dentro de este contenedor */
+}
+
+/* Pseudo-elemento que contiene el degradado y se anima */
+.card-shine::before {
+    content: '';
+    position: absolute;
+    /* Tamaño grande para cubrir la diagonal del viewport cuando se mueva */
+    width: 400%;
+    height: 400%;
     background: linear-gradient(
         45deg,
         rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.2) 40%, /* Más opaco y extendido */
-        rgba(255, 255, 255, 0.4) 50%, /* Punto más brillante */
-        rgba(255, 255, 255, 0.2) 60%, /* Más opaco y extendido */
+        rgba(255, 255, 255, 0.25) 40%, /* Opacidad más sutil para el fondo */
+        rgba(255, 255, 255, 0.55) 50%, /* Punto más brillante, pero aún sutil */
+        rgba(255, 255, 255, 0.25) 60%,
         rgba(255, 255, 255, 0) 100%
     );
-    transform: rotate(45deg); /* Rota el degradado para que sea diagonal */
-    pointer-events: none; /* Asegura que el brillo no interfiera con los eventos del mouse */
-    opacity: 1; /* Ahora el brillo es siempre visible */
-    transition: opacity 0.8s ease-in-out; /* Transición para la opacidad (aunque ahora siempre es 1) */
-    z-index: 1; /* Coloca el brillo debajo del contenido */
-    /* La animación se aplica siempre, con una duración de 15s y se repite infinitamente */
+    transform: rotate(45deg); /* Rota el degradado */
+    /* La animación se aplica al pseudo-elemento */
     animation: shine-animation 5s infinite linear;
 }
-
 /* Definición de la animación del brillo */
 @keyframes shine-animation {
     0% {
@@ -34,7 +37,7 @@
         transform: translate(-100%, -100%) rotate(45deg);
     }
     /* El movimiento ocurre en los primeros 2.5 segundos (aproximadamente el 16.6% de 15 segundos) */
-    20.0% {
+    50.0% {
         /* Termina el brillo muy abajo a la derecha (fuera de la tarjeta) */
         transform: translate(100%, 100%) rotate(45deg);
     }
