@@ -124,6 +124,13 @@ button:active {
     color: #000;
     border: none;
     cursor: pointer;
+
+    border-bottom-color: rgba(0, 0, 0, 0.0);
+    border-left-color: rgba(0, 0, 0, 0.0);
+    border-right-color: rgba(0, 0, 0, 0.0);
+    border-top-color: rgba(0, 0, 0, 0.0);
+    color: rgba(0, 0, 0, 0.0);
+    /*border-style: solid;*/
 }
 
 .top-button {
@@ -136,6 +143,8 @@ button:active {
     border: none;
     cursor: pointer;
     z-index: 2;
+    outline: none; /* Eliminar el outline por defecto */
+    
 }
 
 .center-botton-container {
